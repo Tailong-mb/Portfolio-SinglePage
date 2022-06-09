@@ -14,40 +14,63 @@ import * as THREE from 'three';
   styleUrls: ['./tree.component.css'],
 })
 export class TreeComponent implements OnInit, AfterViewInit {
+  @ViewChild('canvas')
   private canvasRef!: ElementRef;
 
-  // Tree Properties
+  //* Cube Properties
 
-  private rotationSpeedY: number = 0.007;
-  public tree!: THREE.Group;
+  @Input() public rotationSpeedY: number = 0.007;
 
-  // Scene Properties
+  @Input() public size: number = 200;
 
-  private cameraZ: number = 5;
-  private fieldOfView: number = 100;
-  private nearClippingPlane: number = 0.1;
-  private farClippingPlane: number = 1000;
+  @Input() public texture: string = '/assets/texture.jpg';
 
-  // Attribute
+  //* Stage Properties
+
+  @Input() public cameraZ: number = 400;
+
+  @Input() public fieldOfView: number = 1;
+
+  @Input('nearClipping') public nearClippingPlane: number = 1;
+
+  @Input('farClipping') public farClippingPlane: number = 1000;
+
+  //? Helper Properties (Private Properties);
 
   private camera!: THREE.PerspectiveCamera;
-  private renderer!: THREE.WebGLRenderer;
-  private scene!: THREE.Scene;
-  private geometry = new THREE.BoxGeometry(1, 1, 1);
 
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef.nativeElement;
   }
 
-  private createScene(): void {
+  private geometry = new THREE.BoxGeometry(1, 1, 1);
+
+  private tree: THREE.Group = new THREE.Group();
+
+  private renderer!: THREE.WebGLRenderer;
+
+  private scene!: THREE.Scene;
+
+  /**
+   *Animate the cube
+   *
+   * @private
+   * @memberof CubeComponent
+   */
+  private animateCube() {
+    this.tree.rotation.y += this.rotationSpeedY;
+  }
+
+  /**
+   * Create the scene
+   *
+   * @private
+   * @memberof TreeComponent
+   */
+  private createScene() {
+    //* Scene
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(
-      this.fieldOfView,
-      this.canvas.clientWidth / this.canvas.clientHeight,
-      this.nearClippingPlane,
-      this.farClippingPlane
-    );
-    this.camera.position.z = this.cameraZ;
+    this.scene.background = new THREE.Color(0x000000);
 
     let leaveDarkMaterial = new THREE.MeshLambertMaterial({ color: 0x91e56e });
     let leaveLightMaterial = new THREE.MeshLambertMaterial({ color: 0xa2ff7a });
@@ -56,17 +79,17 @@ export class TreeComponent implements OnInit, AfterViewInit {
     });
     let stemMaterial = new THREE.MeshLambertMaterial({ color: 0x7d5a4f });
 
-    let light1 = new THREE.DirectionalLight(0xeeffd3, 1);
-    light1.position.set(0, 0, 1);
-    this.scene.add(light1);
+    let lightOne = new THREE.DirectionalLight(0xeeffd3, 1);
+    lightOne.position.set(0, 0, 1);
+    this.scene.add(lightOne);
 
-    let light2 = new THREE.DirectionalLight(0xff0000, 0.4);
-    light2.position.set(1, 0, 0);
-    this.scene.add(light2);
+    let lightSecond = new THREE.DirectionalLight(0xff0000, 0.4);
+    lightSecond.position.set(1, 0, 0);
+    this.scene.add(lightSecond);
 
-    let light3 = new THREE.DirectionalLight(0xffffff, 0.2);
-    light3.position.set(0, 1, 0);
-    this.scene.add(light3);
+    let lightThird = new THREE.DirectionalLight(0xffffff, 0.2);
+    lightThird.position.set(0, 1, 0);
+    this.scene.add(lightThird);
 
     let stem = new THREE.Mesh(this.geometry, stemMaterial);
     stem.position.set(0, 0, 0);
@@ -96,34 +119,38 @@ export class TreeComponent implements OnInit, AfterViewInit {
     ground.position.set(0, -1, 0);
     ground.scale.set(2.4, 0.8, 2.4);
 
-    this.tree = new THREE.Group();
-    this.tree.add(
-      leaveDark,
-      leaveLight,
-      squareLeave01,
-      squareLeave02,
-      squareLeave03,
-      ground,
-      stem
-    );
+    this.tree.add(leaveDark);
+    this.tree.add(leaveLight);
+    this.tree.add(squareLeave01);
+    this.tree.add(squareLeave02);
+    this.tree.add(squareLeave03);
+    this.tree.add(ground);
+    this.tree.add(stem);
 
     this.tree.rotation.y = 1;
     this.tree.rotation.x = 0.5;
 
     this.scene.add(this.tree);
+
+    //*Camera
+    this.camera = new THREE.PerspectiveCamera(
+      this.fieldOfView,
+      this.canvas.clientWidth / this.canvas.clientHeight,
+      this.nearClippingPlane,
+      this.farClippingPlane
+    );
+    this.camera.position.z = this.cameraZ;
   }
 
   /**
-   * Animation of the tree
+   * RenderingLoop
    *
    * @private
    * @memberof TreeComponent
    */
-  private animateTree(): void {
-    this.tree.rotation.y += this.rotationSpeedY;
-  }
-
   private startRenderingLoop() {
+    //* Renderer
+    // Use canvas element in template
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
@@ -131,7 +158,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
     let component: TreeComponent = this;
     (function render() {
       requestAnimationFrame(render);
-      component.animateTree();
+      component.animateCube();
       component.renderer.render(component.scene, component.camera);
     })();
   }
@@ -140,7 +167,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.createScene();
     this.startRenderingLoop();
   }
