@@ -73,10 +73,13 @@ export class TreeComponent implements OnInit, AfterViewInit {
     this.scene.background = new THREE.Color(0x000000);
 
     let leaveDarkMaterial = new THREE.MeshLambertMaterial({ color: 0x91e56e });
+
     let leaveLightMaterial = new THREE.MeshLambertMaterial({ color: 0xa2ff7a });
+
     let leaveDarkDarkMaterial = new THREE.MeshLambertMaterial({
       color: 0x71b356,
     });
+
     let stemMaterial = new THREE.MeshLambertMaterial({ color: 0x7d5a4f });
 
     let lightOne = new THREE.DirectionalLight(0xeeffd3, 1);
@@ -118,6 +121,8 @@ export class TreeComponent implements OnInit, AfterViewInit {
     let ground = new THREE.Mesh(this.geometry, leaveDarkDarkMaterial);
     ground.position.set(0, -1, 0);
     ground.scale.set(2.4, 0.8, 2.4);
+
+
 
     this.tree.add(leaveDark);
     this.tree.add(leaveLight);
