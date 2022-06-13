@@ -5,22 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
 import { HeadComponent } from './head/head.component';
-import { LeftPartComponent } from './left-part/left-part.component';
 import { BodyComponent } from './body/body.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TreeComponent,
-    HeadComponent,
-    LeftPartComponent,
-    BodyComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, TreeComponent, HeadComponent, BodyComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
