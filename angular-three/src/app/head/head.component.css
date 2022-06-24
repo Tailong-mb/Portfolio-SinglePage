@@ -1,3 +1,6 @@
+.title {
+  margin-bottom: 4rem;
+}
 .name {
   display: flex;
   flex-direction: column;
@@ -22,7 +25,7 @@
 
 .name-box-animation {
   background-color: #c3d72b;
-  width: 2rem;
+  width: 2.5rem;
   height: 1rem;
   position: absolute;
 }
@@ -35,6 +38,17 @@
   animation: 3s linear 1s infinite alternate leftToRightTwo;
 }
 
+.description {
+  margin: 1rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.666rem;
+  font-size: 1.333rem;
+  
+}
+
 @keyframes leftToRightTwo {
   0% {
     left: 5rem;
@@ -45,7 +59,7 @@
 }
 @keyframes leftToRightOne {
   0% {
-    left: 0;
+    left: 1rem;
   }
   100% {
     left: 10rem;
