@@ -1,0 +1,53 @@
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.666rem;
+  margin-left: 1rem;
+}
+
+.name-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.333rem;
+}
+
+.name-box-span {
+  font-size: 5rem;
+  color: #c3d72b;
+}
+
+.surname {
+  margin-left: 5rem;
+}
+
+.name-box-animation {
+  background-color: #c3d72b;
+  width: 2rem;
+  height: 1rem;
+  position: absolute;
+}
+
+.surname-animation {
+  animation: 3s linear 1s infinite alternate leftToRightOne;
+}
+
+.name-animation {
+  animation: 3s linear 1s infinite alternate leftToRightTwo;
+}
+
+@keyframes leftToRightTwo {
+  0% {
+    left: 5rem;
+  }
+  100% {
+    left: 17rem;
+  }
+}
+@keyframes leftToRightOne {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 10rem;
+  }
+}
