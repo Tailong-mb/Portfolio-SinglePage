@@ -1,15 +1,31 @@
-<div class="title">
-  <div class="name">
-    <div class="name-box">
-      <span class="name-box-span">Yanis</span>
-      <div>
-        <div class="name-box-animation surname-animation"></div>
+<div class="cv-info">
+  <div class="title">
+    <div class="name">
+      <div class="name-box">
+        <span class="name-box-span">Yanis</span>
+        <div>
+          <div class="name-box-animation surname-animation"></div>
+        </div>
+      </div>
+      <div class="name-box surname">
+        <span class="name-box-span">Ksouri</span>
+        <div>
+          <div class="name-box-animation name-animation"></div>
+        </div>
       </div>
     </div>
-    <div class="name-box surname">
-      <span class="name-box-span">Ksouri</span>
-      <div>
-        <div class="name-box-animation name-animation"></div>
+  </div>
+  <div class="information-details" [@listAnimation]="dataRight.length">
+    <div class="information-component-container">
+      <div class="information-component" *ngFor="let data of dataLeft">
+        <img class="icon" src="{{ data.icon }}" alt="icon" />
+        <p>{{ data.description }}</p>
+      </div>
+    </div>
+    <div class="information-component-container">
+      <div class="information-component" *ngFor="let data of dataRight">
+        <img class="icon" src="{{ data.icon }}" alt="icon" />
+        <p>{{ data.description }}</p>
       </div>
     </div>
   </div>
