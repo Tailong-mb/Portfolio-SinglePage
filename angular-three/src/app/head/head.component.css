@@ -49,7 +49,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-self: center;
+  align-items: center;
   gap: 0.666rem;
   font-size: 1.333rem;
 }
@@ -81,6 +81,11 @@
   max-width: 25px;
   max-height: 25px;
   margin-right: 0.313rem;
+}
+
+lottie-player {
+  height: 15rem;
+  width: 15rem;
 }
 
 @keyframes leftToRightTwo {
