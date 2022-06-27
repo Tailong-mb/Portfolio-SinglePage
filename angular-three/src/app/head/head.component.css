@@ -49,6 +49,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-self: center;
   gap: 0.666rem;
   font-size: 1.333rem;
 }

@@ -17,7 +17,7 @@ import { informationComplement, informationContact } from './dataHeader';
   animations: [
     trigger('descriptionAnimation', [
       transition('void => *', [
-        query('p', style({ transform: 'translateX(40px)' })),
+        query('p', style({ transform: 'translateX(-40px)' })),
         query(
           'p',
           stagger('400ms', [
