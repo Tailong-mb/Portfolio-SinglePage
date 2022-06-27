@@ -1,1 +1,30 @@
-<p>experience works!</p>
+<div class="background">
+  <div class="container">
+    <div class="part">
+      <h2>Expériences</h2>
+      <div class="part-info" *ngFor="let data of experienceInfo">
+        <div class="part-info-title">
+          <div class="sun"></div>
+          <h4>{{ data.Title }}</h4>
+        </div>
+        <h5>{{ data.Time }}</h5>
+        <p>{{ data.Description }}</p>
+      </div>
+    </div>
+    <div class="could-area">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+    <div class="part">
+      <h2>Formations</h2>
+      <div class="part-info" *ngFor="let data of formationInfo">
+        <div class="part-info-title">
+          <div class="sun"></div>
+          <h4>{{ data.Title }}</h4>
+        </div>
+        <h5>{{ data.Time }}</h5>
+        <p>{{ data.Description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
