@@ -9,9 +9,10 @@ import { HeadComponent } from './head/head.component';
 import { BodyComponent } from './body/body.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { RightSideComponent } from './right-side/right-side.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
-  declarations: [AppComponent, TreeComponent, HeadComponent, BodyComponent, ExperienceComponent, RightSideComponent],
+  declarations: [AppComponent, TreeComponent, HeadComponent, BodyComponent, ExperienceComponent, RightSideComponent, SkillsComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
