@@ -26,6 +26,14 @@ export class PresentationComponent implements AfterViewInit {
     clientX: number;
     clientY: number;
   }) {
+    const tiltEffectSettings = {
+      max: 20, // max tilt rotation (degrees (deg))
+      perspective: 1000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
+      scale: 1.0, // transform scale - 2 = 200%, 1.5 = 150%, etc..
+      speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
+      easing: 'cubic-bezier(.03,.98,.52,.99)', // easing (transition-timing-function) of the enter/exit transition
+    };
+
     const photo = event.currentTarget;
     const photoWidth = photo.offsetWidth;
     const photoHeight = photo.offsetHeight;
@@ -34,38 +42,38 @@ export class PresentationComponent implements AfterViewInit {
     const mouseX = event.clientX - centerX;
     const mouseY = event.clientY - centerY;
     const rotateXUncapped =
-      (1 * this.tiltEffectSettings.max * mouseY) / (photoHeight / 2);
+      (1 * tiltEffectSettings.max * mouseY) / (photoHeight / 2);
     const rotateYUncapped =
-      (-1 * this.tiltEffectSettings.max * mouseX) / (photoWidth / 2);
+      (-1 * tiltEffectSettings.max * mouseX) / (photoWidth / 2);
     const rotateX =
-      rotateXUncapped < -this.tiltEffectSettings.max
-        ? -this.tiltEffectSettings.max
-        : rotateXUncapped > this.tiltEffectSettings.max
-        ? this.tiltEffectSettings.max
+      rotateXUncapped < -tiltEffectSettings.max
+        ? -tiltEffectSettings.max
+        : rotateXUncapped > tiltEffectSettings.max
+        ? tiltEffectSettings.max
         : rotateXUncapped;
     const rotateY =
-      rotateYUncapped < -this.tiltEffectSettings.max
-        ? -this.tiltEffectSettings.max
-        : rotateYUncapped > this.tiltEffectSettings.max
-        ? this.tiltEffectSettings.max
+      rotateYUncapped < -tiltEffectSettings.max
+        ? -tiltEffectSettings.max
+        : rotateYUncapped > tiltEffectSettings.max
+        ? tiltEffectSettings.max
         : rotateYUncapped;
 
-    photo.style.transform = `perspective(${this.tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
-                            scale3d(${this.tiltEffectSettings.scale}, ${this.tiltEffectSettings.scale}, ${this.tiltEffectSettings.scale})`;
+    photo.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                            scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
   }
 
   private photoMouseLeave(event: { currentTarget: any }) {
-    event.currentTarget.style.transform = `perspective(${this.tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    event.currentTarget.style.transform = `perspective(10000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     this.setTransition(event);
   }
 
   private setTransition(event: { currentTarget: any }) {
     const photo = event.currentTarget;
     clearTimeout(photo.transitionTimeoutId);
-    photo.style.transition = `transform ${this.tiltEffectSettings.speed}ms ${this.tiltEffectSettings.easing}`;
+    photo.style.transition = `transform 400ms cubic-bezier(.03,.98,.52,.99)`;
     photo.transitionTimeoutId = setTimeout(() => {
       photo.style.transition = '';
-    }, this.tiltEffectSettings.speed);
+    }, 400);
   }
 
   constructor() {}
