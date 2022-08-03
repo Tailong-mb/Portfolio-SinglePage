@@ -1,11 +1,17 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
-  selector: 'app-presentation',
-  templateUrl: './presentation.component.html',
-  styleUrls: ['./presentation.component.css'],
+  selector: 'app-photo',
+  templateUrl: './photo.component.html',
+  styleUrls: ['./photo.component.css'],
 })
-export class PresentationComponent implements AfterViewInit {
+export class PhotoComponent implements AfterViewInit {
   public tiltEffectSettings = {
     max: 25, // max tilt rotation (degrees (deg))
     perspective: 1000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
@@ -17,11 +23,11 @@ export class PresentationComponent implements AfterViewInit {
   @ViewChild('photo')
   private photo!: ElementRef;
 
-  private photoMouseEnter(event: any) {
+  public photoMouseEnter(event: any) {
     this.setTransition(event);
   }
 
-  private photoMouseMove(event: {
+  public photoMouseMove(event: {
     currentTarget: any;
     clientX: number;
     clientY: number;
@@ -62,7 +68,7 @@ export class PresentationComponent implements AfterViewInit {
                             scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
   }
 
-  private photoMouseLeave(event: { currentTarget: any }) {
+  public photoMouseLeave(event: { currentTarget: any }) {
     event.currentTarget.style.transform = `perspective(10000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     this.setTransition(event);
   }
@@ -76,8 +82,6 @@ export class PresentationComponent implements AfterViewInit {
     }, 400);
   }
 
-  constructor() {}
-
   ngAfterViewInit(): void {
     this.photo.nativeElement.addEventListener(
       'mouseenter',
@@ -89,4 +93,6 @@ export class PresentationComponent implements AfterViewInit {
       this.photoMouseLeave
     );
   }
+
+  constructor() {}
 }

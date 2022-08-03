@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
-import { PresentationComponent } from './presentation/presentation.component';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
-  declarations: [AppComponent, TreeComponent, PresentationComponent],
+  declarations: [AppComponent, TreeComponent, PhotoComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
