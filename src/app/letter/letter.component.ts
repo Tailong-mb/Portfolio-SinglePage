@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-letter',
   templateUrl: './letter.component.html',
-  styleUrls: ['./letter.component.css']
+  styleUrls: ['./letter.component.css'],
 })
-export class LetterComponent implements OnInit {
+export class LetterComponent {
+  @Input() word!: String;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }

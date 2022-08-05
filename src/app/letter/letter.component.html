@@ -1,1 +1,5 @@
-<p>letter works!</p>
+<div class="word">
+  <span class="letter" *ngFor="let letter of word.split('')">
+    <span>{{ letter }}</span>
+  </span>
+</div>
