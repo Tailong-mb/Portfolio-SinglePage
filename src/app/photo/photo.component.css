@@ -1,6 +1,7 @@
 #photo {
-    height: 500px;
-    width: 400px;
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-  }
+  height: 43vw;
+  width: 32vw;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  position: absolute;
+}
