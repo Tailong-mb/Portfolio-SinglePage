@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import {
   animate,
   query,
@@ -12,26 +12,25 @@ import {
   selector: 'app-letter',
   templateUrl: './letter.component.html',
   styleUrls: ['./letter.component.css'],
-  //Bounce child
-  animations: [
-    trigger('letterAnimation', [
-      transition('* => *', [
-        query('.letter', style({ transform: 'translateY(0)' })),
-        query(
-          '.letter',
-          stagger('50ms', [
-            animate(
-              '200ms ease-out',
-              style({ transform: 'translateY(-100%)' })
-            ),
-          ])
-        ),
-      ]),
-    ]),
-  ],
 })
 export class LetterComponent {
   @Input() word!: String;
+
+  inComponent = false;
+
+  @HostListener('mouseenter')
+  onMouseEnter() {
+    Array.from(document.getElementsByClassName('letter')).forEach((letter) => {
+      letter.classList.add('animate');
+    });
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    Array.from(document.getElementsByClassName('letter')).forEach((letter) => {
+      letter.classList.remove('animate');
+    });
+  }
 
   constructor() {}
 }

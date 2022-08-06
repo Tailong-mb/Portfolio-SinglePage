@@ -12,21 +12,18 @@
   overflow: hidden;
 }
 
-.word:hover .letter span {
-  animation-play-state: running;
+.animate{
+  animation: letterAnimation 500ms ease-in-out;
 }
 
-.letter span {
-  animation: letterAnimation 1s ease-out;
-  z-index: 0;
-}
-
-@keyframes letterAnimation {
-  0% {
+@Keyframes letterAnimation{
+  0%{
     transform: translateY(0%);
   }
 
-  100% {
+  100%{
     transform: translateY(-100%);
   }
+
+
 }

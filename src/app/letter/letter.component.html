@@ -1,6 +1,10 @@
-<div class="word-container" [@letterAnimation]="word.length">
-  <div class="word" *ngFor="let letter of word.split('')">
-    <div class="letter">
+<div
+  class="word-container"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div class="word" *ngFor="let letter of word.split(''); let index = index">
+    <div class="letter" [ngStyle]="{ 'animation-delay': index * 0.1 + 's' }">
       {{ letter }}
     </div>
   </div>
