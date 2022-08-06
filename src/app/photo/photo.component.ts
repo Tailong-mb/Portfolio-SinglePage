@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-photo',
@@ -12,14 +6,6 @@ import {
   styleUrls: ['./photo.component.css'],
 })
 export class PhotoComponent implements AfterViewInit {
-  public tiltEffectSettings = {
-    max: 25, // max tilt rotation (degrees (deg))
-    perspective: 1000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
-    scale: 1.1, // transform scale - 2 = 200%, 1.5 = 150%, etc..
-    speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
-    easing: 'cubic-bezier(.03,.98,.52,.99)', // easing (transition-timing-function) of the enter/exit transition
-  };
-
   @ViewChild('photo')
   private photo!: ElementRef;
 
@@ -48,7 +34,7 @@ export class PhotoComponent implements AfterViewInit {
     const mouseX = event.clientX - centerX;
     const mouseY = event.clientY - centerY;
     const rotateXUncapped =
-      (1 * tiltEffectSettings.max * mouseY) / (photoHeight / 2);
+      (tiltEffectSettings.max * mouseY) / (photoHeight / 2);
     const rotateYUncapped =
       (-1 * tiltEffectSettings.max * mouseX) / (photoWidth / 2);
     const rotateX =
@@ -64,7 +50,7 @@ export class PhotoComponent implements AfterViewInit {
         ? tiltEffectSettings.max
         : rotateYUncapped;
 
-    photo.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+    photo.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)
                             scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
   }
 

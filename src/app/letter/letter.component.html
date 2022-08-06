@@ -1,5 +1,7 @@
-<div class="word">
-  <span class="letter" *ngFor="let letter of word.split('')">
-    <span>{{ letter }}</span>
-  </span>
+<div class="word-container" [@letterAnimation]="word.length">
+  <div class="word" *ngFor="let letter of word.split('')">
+    <div class="letter">
+      {{ letter }}
+    </div>
+  </div>
 </div>

@@ -3,7 +3,6 @@
   color: white;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
-  box-sizing: border-box;
   opacity: 1;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
@@ -13,12 +12,12 @@
   overflow: hidden;
 }
 
-.word:hover .letter {
+.word:hover .letter span {
   animation-play-state: running;
 }
 
-.letter {
-  animation: letterAnimation 1s ease-in forwards infinite 0.03s;
+.letter span {
+  animation: letterAnimation 1s ease-out;
   z-index: 0;
 }
 
@@ -27,10 +26,7 @@
     transform: translateY(0%);
   }
 
-  50% {
-    transform: translateY(-100%);
-  }
   100% {
-    transform: translateY(0%);
+    transform: translateY(-100%);
   }
 }
