@@ -1,6 +1,6 @@
 <div class="word-container" [@fadeIn]="word.length">
   <div class="word" *ngFor="let letter of word.split(''); let index = index">
-    <div class="letter" [ngStyle]="{ 'animation-delay': index * 0.1 + 's' }">
+    <div class="letter" [ngStyle]="{ 'animation-delay': index * 0.05 + 's' }">
       {{ letter }}
     </div>
   </div>

@@ -34,6 +34,12 @@ export const fadeIn = trigger('fadeIn', [
   animations: [fadeIn],
 })
 export class AppComponent {
-  title = 'YANIS';
-  test = 'test';
+  mode: string = 'light';
+  circleColor: string = 'circle-dark';
+
+  public toggleMode() {
+    this.mode = this.mode === 'light' ? 'dark' : 'light';
+    this.circleColor =
+      this.circleColor === 'circle-light' ? 'circle-dark' : 'circle-light';
+  }
 }

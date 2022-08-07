@@ -1,3 +1,31 @@
-<div class="main">
-  <app-photo></app-photo>
+<div class="main" [ngClass]="mode">
+  <div class="hero">
+    <div class="header">
+      <app-letter class="header-left" [word]="'YANIS'"></app-letter>
+      <div class="work-status">
+        <span class="circle" [ngClass]="circleColor"></span>
+        <p>available for <b>work</b></p>
+      </div>
+      <div class="nav">
+        <div class="nav-item">
+          <span>1.</span>
+          <app-letter [word]="'WORK'"></app-letter>
+        </div>
+        <div class="nav-item">
+          <span>2.</span>
+          <app-letter [word]="'ABOUT'"></app-letter>
+        </div>
+        <div class="nav-item">
+          <span>3.</span>
+          <app-letter [word]="'CONTACT'"></app-letter>
+        </div>
+      </div>
+    </div>
+    <div class="photo">
+      <app-photo></app-photo>
+    </div>
+    <div class="foot-hero">
+      <app-letter [word]="'dark mode'" (click)="toggleMode()"></app-letter>
+    </div>
+  </div>
 </div>
