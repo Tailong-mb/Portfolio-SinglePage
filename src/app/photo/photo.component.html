@@ -1,1 +1,12 @@
-<img src="./../../assets/yanis.jpg" id="photo" #photo />
+<div class="box">
+  <div class="content">
+    <img
+      src="./../../assets/yanis.jpg"
+      id="photo"
+      #photo
+      (mouseleave)="photoMouseLeave($event)"
+      (mouseenter)="photoMouseEnter($event)"
+      (mousemove)="photoMouseMove($event)"
+    />
+  </div>
+</div>

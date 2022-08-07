@@ -1,18 +1,20 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
   styleUrls: ['./photo.component.css'],
 })
-export class PhotoComponent implements AfterViewInit {
+export class PhotoComponent {
   @ViewChild('photo')
   private photo!: ElementRef;
 
+  @HostListener('mouseenter', ['$event'])
   public photoMouseEnter(event: any) {
     this.setTransition(event);
   }
 
+  @HostListener('mousemove', ['$event'])
   public photoMouseMove(event: {
     currentTarget: any;
     clientX: number;
@@ -54,6 +56,7 @@ export class PhotoComponent implements AfterViewInit {
                             scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
   }
 
+  @HostListener('mouseleave', ['$event'])
   public photoMouseLeave(event: { currentTarget: any }) {
     event.currentTarget.style.transform = `perspective(10000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     this.setTransition(event);
@@ -66,18 +69,6 @@ export class PhotoComponent implements AfterViewInit {
     photo.transitionTimeoutId = setTimeout(() => {
       photo.style.transition = '';
     }, 400);
-  }
-
-  ngAfterViewInit(): void {
-    this.photo.nativeElement.addEventListener(
-      'mouseenter',
-      this.photoMouseEnter
-    );
-    this.photo.nativeElement.addEventListener('mousemove', this.photoMouseMove);
-    this.photo.nativeElement.addEventListener(
-      'mouseleave',
-      this.photoMouseLeave
-    );
   }
 
   constructor() {}
