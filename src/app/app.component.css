@@ -1,9 +1,8 @@
 .main {
-  background-color: black;
   min-height: 100vh;
   top: 0;
   bottom: 0;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  background-color: black;
 }

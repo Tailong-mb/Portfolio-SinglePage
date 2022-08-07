@@ -1,7 +1,5 @@
 .word {
   display: inline-block;
-  color: white;
-  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   opacity: 1;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
