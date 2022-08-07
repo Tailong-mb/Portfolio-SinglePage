@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.animate{
+.word-container:hover .word .letter{
   animation: letterAnimation 500ms ease-in-out;
 }
 
