@@ -1,0 +1,22 @@
+<div class="load">
+  <div class="load-message">
+    <div class="word">
+      <div
+        class="hello"
+        *ngFor="let letter of hello.split(''); let index = index"
+        [ngStyle]="{ 'animation-delay': index * 0.1 + 1 + 's' }"
+      >
+        {{ letter }}
+      </div>
+    </div>
+    <div class="word">
+      <div
+        class="there"
+        *ngFor="let letter of there.split(''); let index = index"
+        [ngStyle]="{ 'animation-delay': index * 0.1 + 1.5 + 's' }"
+      >
+        {{ letter }}
+      </div>
+    </div>
+  </div>
+</div>
