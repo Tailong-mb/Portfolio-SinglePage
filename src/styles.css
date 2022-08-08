@@ -4,3 +4,27 @@ html {
   width: 100%;
   margin: 0 !important;
 }
+
+@font-face {
+  font-family: 'Migra';
+  src: local('Migra'), url('/assets/font/Migra/MigraItalic-ExtralightItalic.ttf') format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Migra';
+  src: local('Migra'), url('/assets/font/Migra/Migra-Extralight.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Migra';
+  src: local('Migra'), url('/assets/font/Migra/Migra-Extrabold.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Migra';
+  src: local('Migra'), url('/assets/font/Migra/MigraItalic-ExtraboldItalic.ttf') format("truetype");
+  font-style: italic;
+  font-weight: bold;
+}
