@@ -25,8 +25,9 @@
     <div class="photo">
       <app-photo></app-photo>
     </div>
-    <div class="foot-hero">
-      <app-letter [word]="'dark mode'" (click)="toggleMode()"></app-letter>
+    <div class="foot-hero" (click)="toggleMode()">
+      <span>✺</span>
+      <app-letter [word]="'dark mode'"></app-letter>
     </div>
   </div>
 </div>
