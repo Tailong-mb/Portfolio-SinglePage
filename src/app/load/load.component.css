@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: load-out 1.5s ease-out forwards 3s;
 }
 
 .load-message{
@@ -27,27 +28,47 @@
 }
 
 .hello{
-  animation: load 2s ease-in-out infinite;
+  animation: load 3s ease-in-out forwards;
 }
 
 .there{
   font-style: italic;
 
-  animation: load 2s ease-in-out infinite;
+  animation: load 3s ease-in-out forwards;
 }
 
 @keyframes load {
   0%{
-    transform: translateY(0);
+    transform: translateY(100px);
     opacity: 1;
   }
 
+  30%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
   75%{
     opacity: 0.5;
   }
 
   100%{
     transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+
+@keyframes load-out {
+  0%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateX(-100%);
     opacity: 0;
   }
 }
