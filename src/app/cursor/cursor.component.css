@@ -1,0 +1,17 @@
+.cursor{
+  width:15px;
+  height:15px;
+  cursor:none;
+  border: 1px solid;
+  position: absolute;
+  border-radius: 50px;
+  z-index: 400;
+}
+
+.cursor-dark{
+  border-color: rgb(25, 25, 25)
+}
+
+.cursor-light{
+  border-color: rgb(240, 239, 231)
+}

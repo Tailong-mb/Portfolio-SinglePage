@@ -36,10 +36,13 @@ export const fadeIn = trigger('fadeIn', [
 export class AppComponent {
   mode: string = 'light';
   circleColor: string = 'circle-dark';
+  cursor: string = 'cursor-dark';
 
   public toggleMode() {
     this.mode = this.mode === 'light' ? 'dark' : 'light';
     this.circleColor =
       this.circleColor === 'circle-light' ? 'circle-dark' : 'circle-light';
+    this.cursor =
+      this.cursor === 'cursor-light' ? 'cursor-dark' : 'cursor-light';
   }
 }

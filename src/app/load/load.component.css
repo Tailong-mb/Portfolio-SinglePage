@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   animation: load-out 1.5s ease-out forwards 3s;
+  cursor: none;
 }
 
 .load-message{
