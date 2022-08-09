@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-load',
@@ -11,5 +12,7 @@ export class LoadComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    $('.there:last').css('padding-right', '0.4rem');
+  }
 }

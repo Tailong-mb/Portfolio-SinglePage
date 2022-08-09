@@ -1,17 +1,31 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  HostListener,
+  Input,
+} from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-cursor',
   templateUrl: './cursor.component.html',
   styleUrls: ['./cursor.component.css'],
 })
-export class CursorComponent implements OnInit {
+export class CursorComponent implements AfterContentInit {
   @Input()
   mode!: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngAfterContentInit(): void {
+    $('.word-container').on('mouseenter mouseleave', function () {
+      $('.cursor').toggleClass('cursor-grow');
+    });
+
+    $('#photo').on('mouseenter mouseleave', function () {
+      $('.cursor').toggleClass('cursor-light');
+    });
+  }
 
   @HostListener('window:mousemove', ['$event'])
   public mousemove(event: MouseEvent) {

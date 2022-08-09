@@ -1,11 +1,17 @@
 .cursor{
-  width:15px;
-  height:15px;
+  width:12px;
+  height:12px;
   cursor:none;
   border: 1px solid;
   position: absolute;
   border-radius: 50px;
   z-index: 400;
+}
+
+.cursor-grow{
+  width: 20px;
+  height: 20px;
+  border-color: rgb(25, 25, 25);
 }
 
 .cursor-dark{

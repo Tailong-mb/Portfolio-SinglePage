@@ -34,8 +34,8 @@
 
 .there{
   font-style: italic;
-
   animation: load 3s ease-in-out forwards;
+  padding-right: 0.4rem;
 }
 
 @keyframes load {
