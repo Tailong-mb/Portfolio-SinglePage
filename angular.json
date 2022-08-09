@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["jquery"
+            ],
             "outputPath": "dist/design-website",
             "index": "src/index.html",
             "main": "src/main.ts",
