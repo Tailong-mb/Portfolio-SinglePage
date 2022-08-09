@@ -16,7 +16,7 @@
   height: 32vw;
   transform: scaleX(0);
   transform-origin: right;
-  animation: reveal 0.7s ease-in-out forwards 4s;
+  animation: reveal 0.7s ease-in-out forwards 3.7s;
 }
 
 .box .content:before{

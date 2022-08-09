@@ -30,10 +30,13 @@ export class CursorComponent implements AfterContentInit {
   @HostListener('window:mousemove', ['$event'])
   public mousemove(event: MouseEvent) {
     const cursor = document.querySelector('.cursor');
+    const xPos = event.pageX;
+    const yPos = event.pageY;
+    // console.log(xPos, yPos);
     // @ts-ignore
-    cursor.setAttribute(
-      'style',
-      'top: ' + event.clientY + 'px; left: ' + event.clientX + 'px;'
-    );
+    $('.cursor').css({
+      top: yPos,
+      left: xPos,
+    });
   }
 }
