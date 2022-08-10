@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   animate,
   state,
@@ -6,6 +6,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import * as $ from 'jquery';
 
 // Animation fadeIn
 export const fadeIn = trigger('fadeIn', [
@@ -33,10 +34,17 @@ export const fadeIn = trigger('fadeIn', [
   styleUrls: ['./app.component.css'],
   animations: [fadeIn],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   mode: string = 'light';
   circleColor: string = 'circle-dark';
   cursor: string = 'cursor-dark';
+
+  ngOnInit() {
+    $('.main').css('overflow', 'hidden');
+    setTimeout(() => {
+      $('.main').css('overflow', 'auto');
+    }, 5000);
+  }
 
   public toggleMode() {
     this.mode = this.mode === 'light' ? 'dark' : 'light';
