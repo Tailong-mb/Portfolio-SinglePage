@@ -1,3 +1,18 @@
+/* Animation on scroll */
+
+.reveal{
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Animation on scroll END */
+
 .main {
   top: 0;
   bottom: 0;
@@ -105,8 +120,6 @@
 
 .text{
   margin: 0;
-  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
   font-family: 'Migra', sans-serif;
 }
 

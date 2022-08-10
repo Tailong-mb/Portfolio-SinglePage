@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {
   animate,
   state,
@@ -54,5 +54,19 @@ export class AppComponent implements OnInit {
       this.circleColor === 'circle-light' ? 'circle-dark' : 'circle-light';
     this.cursor =
       this.cursor === 'cursor-light' ? 'cursor-dark' : 'cursor-light';
+  }
+
+  @HostListener('window:scroll')
+  public reveal() {
+    var reveals = document.querySelectorAll(".reveal")
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      if (elementTop < windowHeight) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
   }
 }
