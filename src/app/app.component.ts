@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
   mode: string = 'light';
   circleColor: string = 'circle-dark';
   cursor: string = 'cursor-dark';
+  borderColor: string = 'border-light';
 
   ngOnInit() {
     $('.main').css({ 'overflow:': 'hidden', width: '100%', height: '100%' });
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   public toggleMode() {
+    this.borderColor = this.borderColor === 'border-dark' ? 'border-light' : 'border-dark';
     this.mode = this.mode === 'light' ? 'dark' : 'light';
     this.circleColor =
       this.circleColor === 'circle-light' ? 'circle-dark' : 'circle-light';

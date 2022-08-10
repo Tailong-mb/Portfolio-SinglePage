@@ -29,7 +29,6 @@ export class CursorComponent implements AfterContentInit {
 
   @HostListener('window:mousemove', ['$event'])
   public mousemove(event: MouseEvent) {
-    const cursor = document.querySelector('.cursor');
     const xPos = event.pageX;
     const yPos = event.pageY;
     // console.log(xPos, yPos);

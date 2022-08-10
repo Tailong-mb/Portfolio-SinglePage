@@ -135,9 +135,18 @@
 
 .button-work{
   border-radius: 25px;
-  border: solid 1px rgb(25, 25, 25);
-  height: 30px;
-  width: 100px;
+  border: solid 1px;
+  height: 40px;
+  width: 150px;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.borderColor-light{
+  border-color: #EBEBE8;
+}
+
+.borderColor-dark{
+  border-color: #1F1F1F;
 }
