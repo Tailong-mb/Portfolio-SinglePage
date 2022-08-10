@@ -40,9 +40,9 @@ export class AppComponent implements OnInit {
   cursor: string = 'cursor-dark';
 
   ngOnInit() {
-    $('.main').css('overflow', 'hidden');
+    $('.main').css({ 'overflow:': 'hidden', width: '100%', height: '100%' });
     setTimeout(() => {
-      $('.main').css('overflow', 'auto');
+      $('.main').css({ 'overflow:': 'auto', width: 'auto', height: 'auto' });
     }, 5000);
   }
 
