@@ -1,28 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {animate, style, transition, trigger} from "@angular/animations";
+import {fadeIn, fadeOut} from "../app.component";
 
 @Component({
   selector: 'app-experiences',
   templateUrl: './experiences.component.html',
   styleUrls: ['./experiences.component.css'],
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('350ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        style({ opacity: 0 }),
-        animate('350ms', style({ opacity: 0 })),
-      ]),
-    ]),
-  ],
+  animations:[fadeIn, fadeOut],
 })
 export class ExperiencesComponent implements OnInit {
   collapsed:boolean = false;
+  crossStatue:string = 'cross-open';
 
   toggleCollapsed(): void {
     this.collapsed = !this.collapsed;
+    this.crossStatue = this.crossStatue === 'cross-open' ? 'cross-close' : 'cross-open';
   }
 
   constructor() { }

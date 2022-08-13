@@ -14,7 +14,7 @@ export const fadeIn = trigger('fadeIn', [
     'void',
     style({
       opacity: 0,
-      transform: 'translateY(20px)',
+      transform: 'translateY(-20px)',
     })
   ),
   transition(':enter', [
@@ -23,6 +23,26 @@ export const fadeIn = trigger('fadeIn', [
       style({
         opacity: 1,
         transform: 'translateY(0)',
+      })
+    ),
+  ]),
+]);
+
+// Animation fadeOut
+export const fadeOut = trigger('fadeOut', [
+  state(
+    '*',
+    style({
+      opacity: 1,
+      transform: 'translateY(0px)',
+    })
+  ),
+  transition(':leave', [
+    animate(
+      '.5s ease-in',
+      style({
+        opacity: 0,
+        transform: 'translateY(-20px)',
       })
     ),
   ]),

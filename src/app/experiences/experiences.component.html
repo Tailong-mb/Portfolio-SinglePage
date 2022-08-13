@@ -2,9 +2,9 @@
   <div class="experience-presentation">
     <h3>Test</h3>
   <div class="experience-button" (click)="toggleCollapsed()">
-    <img class="experience-cross" src="../../assets/images/xmark-solid.svg">
+    <img [ngClass]="crossStatue" src="../../assets/images/xmark-solid.svg">
   </div>
 
   </div>
-  <img *ngIf="collapsed" @fadeInOut src="../../assets/images/test.jpg" alt="test" class="experience-image">
+  <img *ngIf="collapsed" @fadeOut @fadeIn src="../../assets/images/test.jpg" alt="test" class="experience-image">
 </div>
