@@ -1,11 +1,10 @@
 <div class="experience-item">
   <div class="experience-presentation">
-    <div class="experience-presentation-logo">
-    </div>
-    <div class="experience-presentation-description">
-      lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
+    <h3>Test</h3>
+  <div class="experience-button" (click)="toggleCollapsed()">
+    <img class="experience-cross" src="../../assets/images/xmark-solid.svg">
   </div>
-  <button  [ngClass]="isToggle()" @rotate (click)="toggleCollapsed()"></button>
+
+  </div>
+  <img *ngIf="collapsed" @fadeInOut src="../../assets/images/test.jpg" alt="test" class="experience-image">
 </div>
-<div  *ngIf="collapsed"></div>
