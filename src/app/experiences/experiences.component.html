@@ -1,10 +1,26 @@
 <div class="experience-item">
-  <div class="experience-presentation">
-    <h3>Test</h3>
-  <div class="experience-button" (click)="toggleCollapsed()">
-    <img [ngClass]="getCrossStatue()" src="../../assets/images/xmark-solid.svg" alt="cross-mark">
+  <div [ngClass]="getLine()"></div>
+  <div *ngFor="let data of experienceData">
+    <div class="experience-presentation">
+      <h3>{{ data.titre }}</h3>
+      <div class="experience-button" (click)="toggleCollapsed()">
+        <img
+          [ngClass]="getCrossStatue()"
+          src="../../assets/images/xmark-solid.svg"
+          alt="cross-mark"
+        />
+      </div>
+    </div>
+    <a href="{{ data.lien }}">
+      <img
+        *ngIf="collapsed"
+        @fadeOut
+        @fadeIn
+        src="{{ data.image }}"
+        alt="test"
+        class="experience-image"
+      />
+    </a>
   </div>
-
-  </div>
-  <img *ngIf="collapsed" @fadeOut @fadeIn src="../../assets/images/test.jpg" alt="test" class="experience-image">
+  <div [ngClass]="getLine()"></div>
 </div>
