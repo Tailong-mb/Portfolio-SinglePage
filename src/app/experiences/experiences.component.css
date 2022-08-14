@@ -31,16 +31,6 @@
   animation: 1s cross-open-animation forwards;
 }
 
-.cross-light{
-  fill:#FFFFFF !important;
-  color:#FFFFFF !important;
-}
-
-.cross-dark{
-  fill:#FFFFFF !important;
-  color:#FFFFFF !important;
-}
-
 .cross-close{
   width: 2rem;
   height: 2rem;
@@ -74,4 +64,3 @@
   cursor:none;
   margin-bottom: 1rem;
 }
-

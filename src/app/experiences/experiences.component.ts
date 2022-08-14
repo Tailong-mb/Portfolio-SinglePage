@@ -5,7 +5,7 @@ import { experiencesData } from './experiencesData';
 @Component({
   selector: 'app-experiences',
   templateUrl: './experiences.component.html',
-  styleUrls: ['./experiences.component.css'],
+  styleUrls: ['./experiences.component.css', '../app.component.css'],
   animations: [fadeIn, fadeOut],
 })
 export class ExperiencesComponent implements OnInit {
@@ -22,9 +22,11 @@ export class ExperiencesComponent implements OnInit {
   }
 
   getCrossStatue(): string {
-    return this.mode === 'light'
-      ? this.crossStatue + ' cross-light'
-      : this.crossStatue + ' cross-dark';
+    return this.mode === 'light' ? this.crossStatue : this.crossStatue;
+  }
+
+  getCrossColor(): string {
+    return this.mode === 'light' ? '#000' : '#fff';
   }
 
   getLine(): string {
