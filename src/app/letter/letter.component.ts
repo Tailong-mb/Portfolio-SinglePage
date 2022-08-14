@@ -10,7 +10,5 @@ import { fadeIn } from '../app.component';
 export class LetterComponent {
   @Input() word!: String;
 
-  inComponent = false;
-
   constructor() {}
 }

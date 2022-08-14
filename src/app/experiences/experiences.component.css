@@ -14,15 +14,21 @@
 .cross-open{
   width: 2rem;
   height: 2rem;
-  color: rgb(25,25,25);
   transform: rotate(45deg);
   animation: 1s cross-open-animation forwards;
+}
+
+.cross-light{
+  fill:black;
+}
+
+.cross-dark{
+  fill:white;
 }
 
 .cross-close{
   width: 2rem;
   height: 2rem;
-  color: rgb(25,25,25);
   transform: rotate(45deg);
   animation: 1s cross-close-animation forwards;
 }
@@ -31,20 +37,15 @@
   0%{
     transform: rotate(45deg);
   }
-  75%{
-    transform: rotate(315deg);
-  }
   100%{
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
+
 }
 
 @keyframes cross-open-animation{
   0%{
-    transform: rotate(0deg);
-  }
-  75%{
-    transform: rotate(315deg);
+    transform: rotate(360deg);
   }
   100%{
     transform: rotate(45deg);
