@@ -43,7 +43,7 @@ export class ExperiencesComponent implements OnInit {
   }
 
   getLine(): string {
-    return this.mode === 'light' ? 'line-light' : 'line-dark';
+    return (this.mode === 'light' ? 'line-light' : 'line-dark') + ' ' + 'line';
   }
 
   ngOnInit(): void {}

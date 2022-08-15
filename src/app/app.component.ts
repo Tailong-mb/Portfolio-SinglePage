@@ -83,10 +83,21 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < reveals.length; i++) {
       let windowHeight = window.innerHeight;
       let elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight) {
+      if (elementTop < windowHeight - 75) {
         reveals[i].classList.add('active');
       } else {
         reveals[i].classList.remove('active');
+      }
+    }
+
+    let lines = document.querySelectorAll('.line');
+    for (let j = 0; j < lines.length; j++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = lines[j].getBoundingClientRect().top;
+      if (elementTop < windowHeight - 75) {
+        lines[j].classList.add('active');
+      } else {
+        lines[j].classList.remove('active');
       }
     }
   }
