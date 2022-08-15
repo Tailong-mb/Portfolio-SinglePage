@@ -9,20 +9,33 @@ import { experiencesData } from './experiencesData';
   animations: [fadeIn, fadeOut],
 })
 export class ExperiencesComponent implements OnInit {
-  collapsed: boolean = false;
-  crossStatue: string = 'cross-open';
   experienceData = experiencesData;
+  collapsedArray = Array.from({ length: experiencesData.length }, () => false);
+  crossStatueArray = Array.from(
+    { length: experiencesData.length },
+    () => 'cross-close'
+  );
 
   @Input() mode!: string;
 
-  toggleCollapsed(): void {
-    this.collapsed = !this.collapsed;
-    this.crossStatue =
-      this.crossStatue === 'cross-open' ? 'cross-close' : 'cross-open';
+  constructor() {
+    console.log(this.crossStatueArray);
   }
 
-  getCrossStatue(): string {
-    return this.mode === 'light' ? this.crossStatue : this.crossStatue;
+  toggleCollapsed(index: number): void {
+    this.collapsedArray[index] = !this.collapsedArray[index];
+    this.crossStatueArray[index] =
+      this.crossStatueArray[index] === 'cross-open'
+        ? 'cross-close'
+        : 'cross-open';
+  }
+
+  getCrossStatue(index: number): string {
+    return this.crossStatueArray[index];
+  }
+
+  getCollapsedStatue(index: number): boolean {
+    return this.collapsedArray[index];
   }
 
   getCrossColor(): string {
@@ -32,7 +45,6 @@ export class ExperiencesComponent implements OnInit {
   getLine(): string {
     return this.mode === 'light' ? 'line-light' : 'line-dark';
   }
-  constructor() {}
 
   ngOnInit(): void {}
 }
