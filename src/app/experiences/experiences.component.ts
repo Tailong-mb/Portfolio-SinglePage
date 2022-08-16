@@ -44,7 +44,13 @@ export class ExperiencesComponent {
     return (this.mode === 'light' ? 'line-light' : 'line-dark') + ' ' + 'line';
   }
 
-  test() {
-    $('.cursor').toggleClass('visible');
+  cursorEnter(): void {
+    $('.cursor-image').addClass('visible');
+    $('.cursor-basic').removeClass('visible');
+  }
+
+  cursorLeave(): void {
+    $('.cursor-image').removeClass('visible');
+    $('.cursor-basic').addClass('visible');
   }
 }

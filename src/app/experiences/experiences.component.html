@@ -19,10 +19,10 @@
     <a href="{{ data.lien }}">
       <img
         *ngIf="getCollapsedStatue(index)"
+        (mouseleave)="cursorLeave()"
+        (mouseenter)="cursorEnter()"
         @fadeOut
         @fadeIn
-        (mouseenter)="test()"
-        (mouseleave)="test()"
         src="{{ data.image }}"
         alt="{{ data.titre }} + '-image'"
         class="experience-image"
