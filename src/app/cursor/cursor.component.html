@@ -1,1 +1,5 @@
-<div class="cursor" [ngClass]="mode"></div>
+<div class="cursor cursor-basic visible" [ngClass]="mode"></div>
+<div class="cursor cursor-image" [ngClass]="getMode()">
+  <span>click</span>
+  <span>for more</span>
+</div>

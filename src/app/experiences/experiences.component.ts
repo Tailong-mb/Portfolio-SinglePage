@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fadeIn, fadeOut } from '../app.component';
 import { experiencesData } from './experiencesData';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-experiences',
@@ -8,7 +9,7 @@ import { experiencesData } from './experiencesData';
   styleUrls: ['./experiences.component.css', '../app.component.css'],
   animations: [fadeIn, fadeOut],
 })
-export class ExperiencesComponent implements OnInit {
+export class ExperiencesComponent {
   experienceData = experiencesData;
   collapsedArray = Array.from({ length: experiencesData.length }, () => false);
   crossStatueArray = Array.from(
@@ -17,10 +18,7 @@ export class ExperiencesComponent implements OnInit {
   );
 
   @Input() mode!: string;
-
-  constructor() {
-    console.log(this.crossStatueArray);
-  }
+  constructor() {}
 
   toggleCollapsed(index: number): void {
     this.collapsedArray[index] = !this.collapsedArray[index];
@@ -46,5 +44,7 @@ export class ExperiencesComponent implements OnInit {
     return (this.mode === 'light' ? 'line-light' : 'line-dark') + ' ' + 'line';
   }
 
-  ngOnInit(): void {}
+  test() {
+    $('.cursor').toggleClass('visible');
+  }
 }

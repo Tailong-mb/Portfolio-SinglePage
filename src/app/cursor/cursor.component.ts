@@ -38,4 +38,10 @@ export class CursorComponent implements AfterContentInit {
       left: xPos,
     });
   }
+
+  public getMode(): string {
+    return this.mode !== 'cursor-dark'
+      ? 'cursor-image-dark'
+      : 'cursor-image-light';
+  }
 }

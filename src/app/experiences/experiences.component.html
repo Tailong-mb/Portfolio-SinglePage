@@ -21,8 +21,10 @@
         *ngIf="getCollapsedStatue(index)"
         @fadeOut
         @fadeIn
+        (mouseenter)="test()"
+        (mouseleave)="test()"
         src="{{ data.image }}"
-        alt="test"
+        alt="{{ data.titre }} + '-image'"
         class="experience-image"
       />
     </a>
