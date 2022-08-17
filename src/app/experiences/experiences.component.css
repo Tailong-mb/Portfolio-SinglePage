@@ -1,7 +1,6 @@
 .experience-item{
   margin-left: calc(20% - 1rem);
   margin-right: calc(20% - 1rem);
-  min-height: 100vh;
   margin-top:3rem;
 }
 
