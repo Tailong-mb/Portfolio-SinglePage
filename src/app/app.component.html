@@ -9,7 +9,7 @@
         <p>available for <b>work</b></p>
       </div>
       <div class="nav">
-        <div class="nav-item">
+        <div class="nav-item" (click)="scrollToExperience()">
           <span>1.</span>
           <app-letter [word]="'WORK'"></app-letter>
         </div>
@@ -42,7 +42,11 @@
     <p class="presentation-country text reveal">
       Currently living <span class="is-italic">in</span> Nancy
     </p>
-    <div class="button-work reveal" [ngClass]="borderColor">
+    <div
+      class="button-work reveal"
+      (click)="scrollToExperience()"
+      [ngClass]="borderColor"
+    >
       <app-letter [word]="'EXPLORE WORK'"></app-letter>
     </div>
   </div>

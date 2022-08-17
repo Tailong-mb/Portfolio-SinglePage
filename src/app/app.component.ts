@@ -101,4 +101,15 @@ export class AppComponent implements OnInit {
       }
     }
   }
+
+  // Scroll zone
+  public scrollToExperience() {
+    $('html, body').animate(
+      {
+        // @ts-ignore
+        scrollTop: $('.experience-item').offset().top,
+      },
+      1500
+    );
+  }
 }
