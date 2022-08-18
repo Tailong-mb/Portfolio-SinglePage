@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   Input,
   OnInit,
   ViewChild,
@@ -16,6 +17,9 @@ import * as THREE from 'three';
 export class TreeComponent implements OnInit, AfterViewInit {
   @ViewChild('canvas')
   private canvasRef!: ElementRef;
+
+  // Mode
+  @Input() mode!: string;
 
   //* Cube Properties
 
@@ -51,6 +55,8 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
   private scene!: THREE.Scene;
 
+  private light = new THREE.PointLight(0xaaaaaa, 0.75);
+
   /**
    *Animate the cube
    *
@@ -70,7 +76,6 @@ export class TreeComponent implements OnInit, AfterViewInit {
   private createScene() {
     //* Scene
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x000000);
 
     let leaveDarkMaterial = new THREE.MeshLambertMaterial({ color: 0x91e56e });
 
@@ -82,21 +87,17 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
     let stemMaterial = new THREE.MeshLambertMaterial({ color: 0x7d5a4f });
 
-    let lightOne = new THREE.DirectionalLight(0xeeffd3, 1);
-    lightOne.position.set(0, 0, 1);
-    this.scene.add(lightOne);
-
-    let lightSecond = new THREE.DirectionalLight(0xff0000, 0.4);
-    lightSecond.position.set(1, 0, 0);
-    this.scene.add(lightSecond);
-
-    let lightThird = new THREE.DirectionalLight(0xffffff, 0.2);
-    lightThird.position.set(0, 1, 0);
-    this.scene.add(lightThird);
-
     let stem = new THREE.Mesh(this.geometry, stemMaterial);
     stem.position.set(0, 0, 0);
     stem.scale.set(0.3, 1.5, 0.3);
+
+    let ambientLight = new THREE.AmbientLight(0x333333, 0.25);
+    this.scene.add(ambientLight);
+
+    // Point light
+    this.light.position.set(0, 0, 0);
+    this.light.castShadow = true;
+    this.light.shadow.bias = 0.0001;
 
     let squareLeave01 = new THREE.Mesh(this.geometry, leaveDarkMaterial);
     squareLeave01.position.set(0.5, 1.6, 0.5);
@@ -121,8 +122,6 @@ export class TreeComponent implements OnInit, AfterViewInit {
     let ground = new THREE.Mesh(this.geometry, leaveDarkDarkMaterial);
     ground.position.set(0, -1, 0);
     ground.scale.set(2.4, 0.8, 2.4);
-
-
 
     this.tree.add(leaveDark);
     this.tree.add(leaveLight);
@@ -165,6 +164,11 @@ export class TreeComponent implements OnInit, AfterViewInit {
       requestAnimationFrame(render);
       component.animateCube();
       component.renderer.render(component.scene, component.camera);
+      if (component.mode === 'light') {
+        component.scene.background = new THREE.Color(0xefefec);
+      } else {
+        component.scene.background = new THREE.Color(0x191919);
+      }
     })();
   }
 
@@ -175,5 +179,38 @@ export class TreeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.createScene();
     this.startRenderingLoop();
+  }
+
+  @HostListener('mousemove', ['$event'])
+  setLightOnMouseOver(event: {
+    currentTarget: any;
+    clientX: number;
+    clientY: number;
+    preventDefault: () => void;
+  }) {
+    event.preventDefault();
+    let mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    let mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    let vector = new THREE.Vector3(mouseX, mouseY, 0.5);
+    vector.unproject(this.camera);
+    let dir = vector.sub(this.camera.position).normalize();
+    let distance = -this.camera.position.z / dir.z;
+    let pos = this.camera.position.clone().add(dir.multiplyScalar(distance));
+    this.light.position.copy(pos);
+
+    this.light.position.copy(
+      new THREE.Vector3(pos.x + 4, pos.y + 3, pos.z + 2)
+    );
+  }
+
+  @HostListener('mouseleave')
+  setLightOnMouseLeave() {
+    this.scene.remove(this.light);
+  }
+
+  @HostListener('mouseenter')
+  setLightOnMouseEnter() {
+    this.scene.add(this.light);
   }
 }
