@@ -57,6 +57,8 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
   private light = new THREE.PointLight(0xaaaaaa, 0.75);
 
+  private ambientLight = new THREE.AmbientLight(0x333333, 0.25);
+
   /**
    *Animate the cube
    *
@@ -91,8 +93,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
     stem.position.set(0, 0, 0);
     stem.scale.set(0.3, 1.5, 0.3);
 
-    let ambientLight = new THREE.AmbientLight(0x333333, 0.25);
-    this.scene.add(ambientLight);
+    this.scene.add(this.ambientLight);
 
     // Point light
     this.light.position.set(0, 0, 0);
@@ -166,8 +167,12 @@ export class TreeComponent implements OnInit, AfterViewInit {
       component.renderer.render(component.scene, component.camera);
       if (component.mode === 'light') {
         component.scene.background = new THREE.Color(0xefefec);
+        component.light.intensity = 1;
+        component.ambientLight.intensity = 0.5;
       } else {
         component.scene.background = new THREE.Color(0x191919);
+        component.light.intensity = 1;
+        component.ambientLight.intensity = 0.25;
       }
     })();
   }
@@ -199,9 +204,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
     let pos = this.camera.position.clone().add(dir.multiplyScalar(distance));
     this.light.position.copy(pos);
 
-    this.light.position.copy(
-      new THREE.Vector3(pos.x + 4, pos.y + 3, pos.z + 2)
-    );
+    this.light.position.copy(new THREE.Vector3(pos.x, pos.y + 3, pos.z + 2));
   }
 
   @HostListener('mouseleave')
