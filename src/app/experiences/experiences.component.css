@@ -4,6 +4,14 @@
   margin-top:3rem;
 }
 
+.experience-title h5{
+  margin: 1px;
+}
+
+.experience-title h3{
+  margin: 1px 1px 2px;
+}
+
 .experience-presentation{
   display: flex;
   flex-direction:row;

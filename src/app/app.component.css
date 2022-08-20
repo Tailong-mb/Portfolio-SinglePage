@@ -183,6 +183,11 @@
   gap:2rem;
 }
 
+.footer-left a{
+  cursor: inherit;
+  color: inherit;
+  text-decoration: inherit;
+}
 .footer-right{
   grid-column: 3;
   justify-content: right;

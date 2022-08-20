@@ -112,4 +112,14 @@ export class AppComponent implements OnInit {
       1500
     );
   }
+
+  public scrollToContact() {
+    $('html, body').animate(
+      {
+        // @ts-ignore
+        scrollTop: $('.contact-click').offset().top,
+      },
+      1500
+    );
+  }
 }

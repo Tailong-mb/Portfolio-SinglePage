@@ -17,7 +17,7 @@
           <span>2.</span>
           <app-letter [word]="'ABOUT'"></app-letter>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" (click)="scrollToContact()">
           <span>3.</span>
           <app-letter [word]="'CONTACT'"></app-letter>
         </div>
@@ -55,8 +55,9 @@
   <app-contact></app-contact>
   <div class="footer">
     <div class="footer-left">
-      <app-letter [word]="'INSTAGRAM'"></app-letter>
-      <app-letter [word]="'LINKEDIN'"></app-letter>
+      <a href="https://www.linkedin.com/in/yanis-ksouri-5198351a4/">
+        <app-letter [word]="'LINKEDIN'"></app-letter>
+      </a>
     </div>
     <div class="footer-right">
       <span>DEVELOPED BY</span>

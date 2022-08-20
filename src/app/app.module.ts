@@ -10,9 +10,10 @@ import { LoadComponent } from './load/load.component';
 import { CursorComponent } from './cursor/cursor.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { ContactComponent } from './contact/contact.component';
+import { EducationComponent } from './education/education.component';
 
 @NgModule({
-  declarations: [AppComponent, TreeComponent, PhotoComponent, LetterComponent, LoadComponent, CursorComponent, ExperiencesComponent, ContactComponent],
+  declarations: [AppComponent, TreeComponent, PhotoComponent, LetterComponent, LoadComponent, CursorComponent, ExperiencesComponent, ContactComponent, EducationComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
