@@ -1,0 +1,24 @@
+.contact-click{
+  font-size:3.5rem;
+  font-family: 'Migra', sans-serif;
+  text-decoration: underline;
+  padding: 1rem;
+}
+
+.contact-click span{
+  margin: 0;
+}
+
+.contact-message{
+  font-size:1.5rem;
+}
+
+.contact-container{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}

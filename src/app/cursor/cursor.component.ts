@@ -22,8 +22,17 @@ export class CursorComponent implements AfterContentInit {
       $('.cursor').toggleClass('cursor-grow');
     });
 
+    $('#canvas').on('mouseenter mouseleave', function () {
+      $('.cursor').toggleClass('cursor-grow');
+    });
+
     $('#photo').on('mouseenter mouseleave', function () {
       $('.cursor').toggleClass('cursor-light');
+    });
+
+    $('.contact-click').on('mouseenter mouseleave', function () {
+      $('.cursor-basic').toggleClass('visible');
+      $('.cursor-contact').toggleClass('visible');
     });
   }
 

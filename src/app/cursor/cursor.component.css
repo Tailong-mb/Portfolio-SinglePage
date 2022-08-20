@@ -63,6 +63,23 @@
   animation: span-animation 6s infinite;
 }
 
+.cursor-contact{
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2px;
+  height: 75px;
+  width: 75px;
+  font-family: 'Migra', sans-serif;
+  z-index: 400;
+  opacity: 0;
+  transform: translateY(-200px);
+  border: solid 1px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes span-animation {
   0%{
     opacity: 1;
