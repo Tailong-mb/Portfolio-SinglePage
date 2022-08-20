@@ -22,3 +22,9 @@
   align-items: center;
   gap:2rem;
 }
+
+.contact-container a{
+  color:inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}

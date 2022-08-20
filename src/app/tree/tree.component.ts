@@ -204,7 +204,7 @@ export class TreeComponent implements OnInit, AfterViewInit {
     let pos = this.camera.position.clone().add(dir.multiplyScalar(distance));
     this.light.position.copy(pos);
 
-    this.light.position.copy(new THREE.Vector3(pos.x, pos.y + 3, pos.z + 2));
+    this.light.position.copy(new THREE.Vector3(pos.x, pos.y + 3, pos.z + 4));
   }
 
   @HostListener('mouseleave')
