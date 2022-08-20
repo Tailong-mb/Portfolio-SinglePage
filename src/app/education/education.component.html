@@ -1,1 +1,22 @@
-<p>education works!</p>
+<div class="education-container">
+  <div class="education-presentation reveal">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab assumenda
+    atque aut corporis culpa dicta doloremque dolorum error et facilis hic ipsam
+    maxime odio pariatur possimus quibusdam reprehenderit, voluptates
+  </div>
+  <div class="education-content">
+    <div *ngFor="let data of educationData">
+      <div class="education-content-item reveal">
+        <div class="education-content-item-title">
+          {{ data.title }}
+        </div>
+        <div class="education-content-item-subtitle">
+          {{ data.subtitle }} ({{ data.date }})
+        </div>
+        <div class="education-content-item-description">
+          {{ data.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

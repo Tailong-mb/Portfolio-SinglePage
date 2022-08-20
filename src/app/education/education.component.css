@@ -1,0 +1,53 @@
+.education-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Migra', sans-serif;
+  gap:2rem;
+  margin-left: calc(10% - 1rem);
+  margin-right: calc(10% - 1rem);
+  margin-top: 2rem;
+}
+
+.education-presentation{
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.education-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.education-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.education-content-item{
+  margin:1rem;
+}
+
+.education-content-item-title{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.education-content-item-subtitle{
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 0.666rem;
+}
+
+.education-content-item-description{
+  font-size: 1.5rem;
+}
