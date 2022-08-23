@@ -122,4 +122,14 @@ export class AppComponent implements OnInit {
       1500
     );
   }
+
+  public scrollToEducation() {
+    $('html, body').animate(
+      {
+        // @ts-ignore
+        scrollTop: $('.education-container').offset().top,
+      },
+      1500
+    );
+  }
 }
