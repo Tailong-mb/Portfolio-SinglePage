@@ -196,3 +196,8 @@
   gap:0.333rem;
 }
 
+@media (max-width: 1500px){
+  .work-status{
+    opacity: 0;
+  }
+}

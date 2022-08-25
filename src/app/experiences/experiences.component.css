@@ -1,5 +1,6 @@
 .experience-item{
   margin: 3rem calc(20% - 1rem);
+  font-family: 'Migra', sans-serif;
 }
 
 .experience-title h5{

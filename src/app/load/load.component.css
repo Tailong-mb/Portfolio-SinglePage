@@ -74,3 +74,9 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 600px){
+  .load{
+    font-size: 4em;
+  }
+}
