@@ -1,23 +1,37 @@
 export const educationData = [
   {
-    title: 'Bachelor of Science in Computer Science',
-    subtitle: 'University of Waterloo',
-    date: 'Sep. 2019 - May. 2020',
+    title: 'CAUE DE LA MEUSE',
+    subtitle: 'COUNCIL OF ARCHITECTURE, URBAN PLANNING AND ENVIRONMENT',
+    date: 'April 2021 - June 2021',
     description:
-      'I graduated with a 3.8 GPA and a distinction in the coursework. I undertook a variety of courses including: Software Engineering, Data Structures, Algorithms, and Object-Oriented Programming. I also undertook a variety of electives including: Web Development, Database Systems, and Computer Networks.',
+      'nternship M1 GAED. Implementation of a greening plan in Bar-le-Duc. Writing of a thesis and presentation. Project approach. Mapping, bibliographical research, meetings with elected officials.',
   },
   {
-    title: 'Bachelor of Science in Computer Science',
-    subtitle: 'University of Waterloo',
-    date: 'Sep. 2019 - May. 2020',
+    title: 'BTEXTBROKER',
+    subtitle: '',
+    date: 'Since November 2019',
     description:
-      'I graduated with a 3.8 GPA and a distinction in the coursework. I undertook a variety of courses including: Software Engineering, Data Structures, Algorithms, and Object-Oriented Programming. I also undertook a variety of electives including: Web Development, Database Systems, and Computer Networks.',
+      'Web editor for various companies through a ordering platform.',
   },
   {
-    title: 'Bachelor of Science in Computer Science',
-    subtitle: 'University of Waterloo',
-    date: 'Sep. 2019 - May. 2020',
+    title: 'GLEG',
+    subtitle: '',
+    date: 'September 2018 - May 2019',
     description:
-      'I graduated with a 3.8 GPA and a distinction in the coursework. I undertook a variety of courses including: Software Engineering, Data Structures, Algorithms, and Object-Oriented Programming. I also undertook a variety of electives including: Web Development, Database Systems, and Computer Networks.',
+      'Student association Groupe Lorrain des Études Géographiques (GLEG). Communication officer. Production of posters and flyers.',
+  },
+  {
+    title: 'APPEN LIMITED',
+    subtitle: '',
+    date: 'June to August 2018',
+    description:
+      'Evaluator for the Apple Store, rating the relevance of applications',
+  },
+  {
+    title: 'ARCHITECTURE URBANISME PAYSAGE LORRAINE',
+    subtitle: '',
+    date: 'June to July 2017',
+    description:
+      'Internship Two year degree in Space Design. Production of plans, photoshop, site visits, meetings, material sheets.',
   },
 ];
