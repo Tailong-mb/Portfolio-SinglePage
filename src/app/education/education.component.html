@@ -4,9 +4,9 @@
     atque aut corporis culpa dicta doloremque dolorum error et facilis hic ipsam
     maxime odio pariatur possimus quibusdam reprehenderit, voluptates
   </div>
-  <div class="education-content">
+  <div class="education-content reveal">
     <div *ngFor="let data of educationData; let index = index">
-      <div class="education-content-item reveal" *ngIf="isExpanded[index]">
+      <div class="education-content-item" *ngIf="isExpanded[index]">
         <div class="education-content-item-title">
           {{ data.title }}
         </div>
@@ -19,14 +19,18 @@
         <div class="carousel">
           <div
             (click)="moveCarouselToPrevious()"
+            (mouseover)="toggleCursor()"
             class="arrow left"
             *ngIf="!isExpanded[0]"
+            [ngClass]="isMode()"
           ></div>
           <div class="education-content-item-date">{{ data.date }}</div>
           <div
             (click)="moveCarouselToNext()"
             class="arrow right"
             *ngIf="!isExpanded[educationData.length - 1]"
+            [ngClass]="isMode()"
+            (mouseover)="toggleCursor()"
           ></div>
         </div>
       </div>

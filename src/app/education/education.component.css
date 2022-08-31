@@ -19,7 +19,7 @@
 }
 
 .arrow{
-  border: 1px solid rgb(25, 25, 25);
+  border: 1px solid;
   border-bottom: none;
   border-left: none;
   width: 20px;
@@ -27,6 +27,13 @@
   transform: rotate(-135deg);
 }
 
+.arrow-dark{
+  border-color: rgb(255,255,255);
+}
+
+.arrow-light{
+  border-color:rgb(25, 25, 25);
+}
 .left{
   transform: rotate(-135deg);
 }
@@ -49,6 +56,7 @@
 
 .education-content-item{
   margin:1rem;
+  animation: carouselAnimation 2s forwards;
 }
 
 .education-content-item-title{
@@ -69,4 +77,14 @@
 .education-content-item-date{
   font-size: 3rem;
   margin:2rem;
+}
+
+@keyframes carouselAnimation {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }

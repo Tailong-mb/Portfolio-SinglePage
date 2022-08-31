@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { educationData } from './education-data';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-education',
@@ -10,6 +11,8 @@ export class EducationComponent implements OnInit {
   educationData = educationData;
   // Array of boolean of education Data
   isExpanded = new Array(this.educationData.length).fill(false);
+
+  @Input() mode!: string;
 
   // Toggle the expanded state of the education data
   toggleExpand(i: number) {
@@ -26,6 +29,14 @@ export class EducationComponent implements OnInit {
     const actualView = this.isExpanded.indexOf(true);
     this.toggleExpand(actualView);
     this.toggleExpand(actualView - 1);
+  }
+
+  toggleCursor() {
+    $('.cursor').toggleClass('cursor-grow');
+  }
+
+  isMode() {
+    return this.mode === 'light' ? 'arrow-light' : 'arrow-dark';
   }
 
   constructor() {
