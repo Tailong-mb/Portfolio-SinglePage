@@ -4,7 +4,7 @@ export const educationData = [
     subtitle: 'COUNCIL OF ARCHITECTURE, URBAN PLANNING AND ENVIRONMENT',
     date: 'April 2021 - June 2021',
     description:
-      'nternship M1 GAED. Implementation of a greening plan in Bar-le-Duc. Writing of a thesis and presentation. Project approach. Mapping, bibliographical research, meetings with elected officials.',
+      'Internship M1 GAED. Implementation of a greening plan in Bar-le-Duc. Writing of a thesis and presentation. Project approach. Mapping, bibliographical research, meetings with elected officials.',
   },
   {
     title: 'BTEXTBROKER',

@@ -5,16 +5,29 @@
     maxime odio pariatur possimus quibusdam reprehenderit, voluptates
   </div>
   <div class="education-content">
-    <div *ngFor="let data of educationData">
-      <div class="education-content-item reveal">
+    <div *ngFor="let data of educationData; let index = index">
+      <div class="education-content-item reveal" *ngIf="isExpanded[index]">
         <div class="education-content-item-title">
           {{ data.title }}
         </div>
         <div class="education-content-item-subtitle">
-          {{ data.subtitle }} ({{ data.date }})
+          {{ data.subtitle }}
         </div>
         <div class="education-content-item-description">
           {{ data.description }}
+        </div>
+        <div class="carousel">
+          <div
+            (click)="moveCarouselToPrevious()"
+            class="arrow left"
+            *ngIf="!isExpanded[0]"
+          ></div>
+          <div class="education-content-item-date">{{ data.date }}</div>
+          <div
+            (click)="moveCarouselToNext()"
+            class="arrow right"
+            *ngIf="!isExpanded[educationData.length - 1]"
+          ></div>
         </div>
       </div>
     </div>

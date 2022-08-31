@@ -10,27 +10,41 @@
   margin-top: 2rem;
 }
 
+.carousel{
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow{
+  border: 1px solid rgb(25, 25, 25);
+  border-bottom: none;
+  border-left: none;
+  width: 20px;
+  height: 20px;
+  transform: rotate(-135deg);
+}
+
+.left{
+  transform: rotate(-135deg);
+}
+
+.right{
+  transform: rotate(45deg);
+}
+
 .education-presentation{
   text-align: center;
   font-size: 3.5rem;
   font-weight: 300;
 }
 
-.education-container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .education-content{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  text-align: center;
+  margin: 2rem;
 }
 
 .education-content-item{
@@ -50,4 +64,9 @@
 
 .education-content-item-description{
   font-size: 1.5rem;
+}
+
+.education-content-item-date{
+  font-size: 3rem;
+  margin:2rem;
 }
