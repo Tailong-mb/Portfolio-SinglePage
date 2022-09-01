@@ -19,13 +19,13 @@
           "options": {
             "allowedCommonJsDependencies": ["jquery"
             ],
-            "outputPath": "dist/design-website",
+            "outputPath": "dist/Portfolio-Yanis",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/tree.jpg",
               "src/assets"
             ],
             "styles": [
