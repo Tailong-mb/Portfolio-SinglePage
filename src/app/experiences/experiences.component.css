@@ -30,14 +30,14 @@
   background-color: rgb(239, 239, 236);
 }
 
-.cross-open{
+.cross-close{
   width: 3rem;
   height: 3rem;
   transform: rotate(45deg);
   animation: 1s cross-open-animation forwards;
 }
 
-.cross-close{
+.cross-open{
   width: 3rem;
   height: 3rem;
   transform: rotate(45deg);

@@ -1,24 +1,10 @@
 export const educationData = [
   {
-    title: 'CAUE DE LA MEUSE',
-    subtitle: 'COUNCIL OF ARCHITECTURE, URBAN PLANNING AND ENVIRONMENT',
-    date: 'April 2021 - June 2021',
-    description:
-      'Internship M1 GAED. Implementation of a greening plan in Bar-le-Duc. Writing of a thesis and presentation. Project approach. Mapping, bibliographical research, meetings with elected officials.',
-  },
-  {
-    title: 'BTEXTBROKER',
+    title: 'ARCHITECTURE URBANISME PAYSAGE LORRAINE',
     subtitle: '',
-    date: 'Since November 2019',
+    date: 'June to July 2017',
     description:
-      'Web editor for various companies through a ordering platform.',
-  },
-  {
-    title: 'GLEG',
-    subtitle: '',
-    date: 'September 2018 - May 2019',
-    description:
-      'Student association Groupe Lorrain des Études Géographiques (GLEG). Communication officer. Production of posters and flyers.',
+      'Internship Two year degree in Space Design. Production of plans, photoshop, site visits, meetings, material sheets.',
   },
   {
     title: 'APPEN LIMITED',
@@ -28,10 +14,24 @@ export const educationData = [
       'Evaluator for the Apple Store, rating the relevance of applications',
   },
   {
-    title: 'ARCHITECTURE URBANISME PAYSAGE LORRAINE',
+    title: 'GLEG',
     subtitle: '',
-    date: 'June to July 2017',
+    date: 'September 2018 - May 2019',
     description:
-      'Internship Two year degree in Space Design. Production of plans, photoshop, site visits, meetings, material sheets.',
+      'Student association Groupe Lorrain des Études Géographiques (GLEG). Communication officer. Production of posters and flyers.',
+  },
+  {
+    title: 'BTEXTBROKER',
+    subtitle: '',
+    date: 'Since November 2019',
+    description:
+      'Web editor for various companies through a ordering platform.',
+  },
+  {
+    title: 'CAUE DE LA MEUSE',
+    subtitle: 'COUNCIL OF ARCHITECTURE, URBAN PLANNING AND ENVIRONMENT',
+    date: 'April 2021 - June 2021',
+    description:
+      'Internship M1 GAED. Implementation of a greening plan in Bar-le-Duc. Writing of a thesis and presentation. Project approach. Mapping, bibliographical research, meetings with elected officials.',
   },
 ];
